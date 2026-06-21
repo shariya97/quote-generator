@@ -93,6 +93,3 @@ This project demonstrates:
 
 Internship Project Submission
 
-## 📄 License
-
-This project is created for educational and internship purposes.
