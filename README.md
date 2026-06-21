@@ -1,95 +1,108 @@
-# 🌟 Quote Generator Hub
+# Quote Generator Hub
 
-Quote Generator Hub is a Flask-based web application that generates inspirational quotes using an external API and stores quote history in a SQLite database.
+A Flask-based web application that fetches random inspirational quotes from an external API and stores them in a SQLite database for viewing quote history.
 
-## 📌 Features
+## Features
 
-* Generate random inspirational quotes
-* Fetch quotes from an external API
-* Store generated quotes in a SQLite database
-* View quote history
-* Modern and responsive user interface
-* Built using Flask and Python
+* Generate random quotes using the ZenQuotes API
+* Display quote author and content
+* Store generated quotes in SQLite database
+* View recent quote history
+* Track total number of quotes generated
+* Clear quote history
+* Responsive and modern user interface
+* Built using Flask, HTML, CSS, and SQLite
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 * Python
 * Flask
 * SQLite
+* Requests
 * HTML5
 * CSS3
-* Requests Library
+* ZenQuotes API
 
-## 📂 Project Structure
+## Project Structure
 
-```text
 quote-generator/
-│
+
 ├── app.py
+
+├── database.db
+
 ├── requirements.txt
+
 ├── README.md
-│
-├── templates/
-│   └── index.html
-│
-└── static/
-    └── style.css
+
+├── static/
+
+│   └── style.css
+
+└── templates/
+
+```
+└── index.html
 ```
 
-## 🚀 Installation and Setup
+## Installation
 
-### 1. Clone the Repository
+1. Clone the repository
 
 ```bash
 git clone https://github.com/shariya97/quote-generator.git
 ```
 
-### 2. Navigate to the Project Folder
+2. Navigate to the project folder
 
 ```bash
 cd quote-generator
 ```
 
-### 3. Install Dependencies
+3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the Application
+4. Run the application
 
 ```bash
 python app.py
 ```
 
-### 5. Open in Browser
+5. Open your browser and visit
 
 ```text
 http://127.0.0.1:5000
 ```
 
-## 📖 How It Works
+## How It Works
 
-1. User clicks the **Generate New Quote** button.
-2. Flask sends a request to an external quote API.
-3. The API returns a random quote and author.
+1. User clicks the "Generate New Quote" button.
+2. Flask sends a request to the ZenQuotes API.
+3. A random quote is returned.
 4. The quote is displayed on the webpage.
-5. The quote is saved in the SQLite database.
-6. Previously generated quotes are displayed in the Quote History section.
+5. The quote is saved to the SQLite database.
+6. The quote history section updates automatically.
 
-## 🎯 Learning Outcomes
+## API Used
 
-This project demonstrates:
+ZenQuotes API
 
-* Flask Web Development
-* API Integration
-* Database Operations using SQLite
-* Frontend Development with HTML and CSS
-* Backend Development with Python
+https://zenquotes.io/
 
-## 👩‍💻 Author
+## Future Improvements
 
-**Shariya**
+* Search quotes by author
+* Favorite quotes feature
+* Export quote history
+* User authentication
+* Dark/Light theme toggle
 
-Internship Project Submission
+## Author
+
+Shariya
+
+
 
