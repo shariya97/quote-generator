@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #b7ece1,
+        #d8f5ef
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+}
+
+.container {
+    width: 1000px;
+    max-width: 100%;
+
+    background: rgba(255,255,255,0.55);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 35px;
+
+    padding: 50px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* Header */
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.header h1 {
+    color: #0c5c57;
+    font-size: 3rem;
+}
+
+.divider {
+    width: 280px;
+    height: 4px;
+
+    background: #6fc8bb;
+
+    margin: 15px auto;
+
+    border-radius: 50px;
+}
+
+/* Button */
+
+.button-container {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.generate-btn {
+
+    background: linear-gradient(
+        135deg,
+        #13b7a7,
+        #0b4f8c
+    );
+
+    color: white;
+
+    border: none;
+
+    padding: 18px 40px;
+
+    border-radius: 50px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.15);
+
+    transition: all 0.3s ease;
+}
+
+.generate-btn:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* Quote Card */
+
+.quote-box {
+
+    background: #c7ece4;
+
+    border-left: 8px solid #10988e;
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    margin-bottom: 40px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.08);
+}
+
+.quote-mark {
+    font-size: 60px;
+    color: #10988e;
+}
+
+.quote-text {
+
+    font-size: 2rem;
+
+    line-height: 1.8;
+
+    color: #173b3a;
+
+    margin-top: 10px;
+}
+
+.author {
+
+    text-align: right;
+
+    margin-top: 20px;
+
+    font-size: 1.5rem;
+
+    color: #0d6b64;
+
+    font-style: italic;
+}
+
+/* History */
+
+.history-section {
+    margin-top: 20px;
+}
+
+.history-heading {
+    color: #134e4a;
+    margin-bottom: 20px;
+}
+
+.history-list {
+    list-style: none;
+}
+
+.history-list li {
+
+    background: #e8faf6;
+
+    border-left: 5px solid #10988e;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.05);
+
+    transition: 0.3s;
+}
+
+.history-list li:hover {
+    transform: translateX(5px);
+}
+
+.history-quote {
+
+    color: #173b3a;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    margin-bottom: 8px;
+}
+
+.history-author {
+
+    color: #0d6b64;
+
+    font-style: italic;
+
+    font-weight: 600;
+}
+
+.timestamp {
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    margin-top: 8px;
+}
+
+p {
+    color: #0c5c57;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 25px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .quote-text {
+        font-size: 1.3rem;
+    }
+
+    .generate-btn {
+        width: 100%;
+        font-size: 18px;
+    }
+}
