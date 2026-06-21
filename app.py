@@ -11,13 +11,13 @@ def init_db():
     cursor = conn.cursor()
 
     cursor.execute('''
-    CREATE TABLE IF NOT EXISTS quotes (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        quote TEXT,
-        author TEXT,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    )
-''')
+        CREATE TABLE IF NOT EXISTS quotes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            quote TEXT,
+            author TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    ''')
 
     conn.commit()
     conn.close()
@@ -29,9 +29,6 @@ def get_random_quote():
         url = "https://zenquotes.io/api/random"
 
         response = requests.get(url, timeout=10)
-
-        print("Status Code:", response.status_code)
-        print("Response Text:", response.text)
 
         if response.status_code == 200:
             data = response.json()[0]
@@ -67,28 +64,55 @@ def get_history():
     cursor = conn.cursor()
 
     cursor.execute(
-    "SELECT quote, author, created_at FROM quotes ORDER BY id DESC"
-)
-    data = cursor.fetchall()
+    "SELECT quote, author, created_at FROM quotes ORDER BY id DESC LIMIT 5"
 
+    )
+
+    data = cursor.fetchall()
     conn.close()
 
     return data
 
 
+# Get total quotes count
+def get_total_quotes():
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT COUNT(*) FROM quotes")
+
+    total = cursor.fetchone()[0]
+
+    conn.close()
+
+    return total
+
+
+# Clear quote history
+def clear_history():
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+
+    cursor.execute("DELETE FROM quotes")
+
+    conn.commit()
+    conn.close()
+
+
 @app.route('/')
 def home():
     history = get_history()
+    total_quotes = get_total_quotes()
 
     return render_template(
         'index.html',
         quote=None,
         author=None,
-        history=history
+        history=history,
+        total_quotes=total_quotes
     )
 
 
-@app.route('/generate')
 @app.route('/generate')
 def generate():
 
@@ -101,17 +125,28 @@ def generate():
         )
 
         history = get_history()
+        total_quotes = get_total_quotes()
 
         return render_template(
             'index.html',
             quote=result['quote'],
             author=result['author'],
-            history=history
+            history=history,
+            total_quotes=total_quotes
         )
 
-    return "Failed to fetch quote"
+    return redirect('/')
+
+
+@app.route('/clear')
+def clear():
+
+    clear_history()
+
+    return redirect('/')
 
 
 if __name__ == '__main__':
     init_db()
     app.run(debug=True)
+

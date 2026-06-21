@@ -6,162 +6,134 @@
 
 body {
     font-family: Georgia, serif;
-
+    background: #cfeee8;
     min-height: 100vh;
-
-    background: linear-gradient(
-        135deg,
-        #b7ece1,
-        #d8f5ef
-    );
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 40px;
+    padding: 15px;
 }
 
 .container {
-    width: 1000px;
-    max-width: 100%;
-
-    background: rgba(255,255,255,0.55);
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    border-radius: 35px;
-
-    padding: 50px;
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.12);
+    max-width: 750px;
+    margin: 0 auto;
+    background: #e6f7f3;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
 /* Header */
 
 .header {
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
 }
 
 .header h1 {
-    color: #0c5c57;
-    font-size: 3rem;
+    color: #0f5d58;
+    font-size: 2.2rem;
 }
 
 .divider {
-    width: 280px;
+    width: 180px;
     height: 4px;
-
-    background: #6fc8bb;
-
-    margin: 15px auto;
-
-    border-radius: 50px;
+    background: #1ea79c;
+    margin: 12px auto;
+    border-radius: 20px;
 }
 
-/* Button */
+/* Stats */
+
+.stats-card {
+    background: #d8f8f2;
+    border-left: 5px solid #10988e;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #134e4a;
+    font-size: 16px;
+}
+
+/* Buttons */
 
 .button-container {
-    text-align: center;
-    margin-bottom: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.button-container a {
+    text-decoration: none;
 }
 
 .generate-btn {
-
-    background: linear-gradient(
-        135deg,
-        #13b7a7,
-        #0b4f8c
-    );
-
+    background: #10988e;
     color: white;
-
     border: none;
-
-    padding: 18px 40px;
-
-    border-radius: 50px;
-
-    font-size: 20px;
+    padding: 12px 22px;
+    border-radius: 40px;
+    font-size: 15px;
     font-weight: bold;
-
     cursor: pointer;
-
-    box-shadow:
-        0 10px 25px rgba(0,0,0,0.15);
-
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .generate-btn:hover {
-
-    transform:
-        translateY(-4px)
-        scale(1.03);
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,0.2);
+    background: #0d7f76;
 }
 
-/* Quote Card */
+.clear-btn {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.clear-btn:hover {
+    background: #b91c1c;
+}
+
+/* Quote Box */
 
 .quote-box {
-
-    background: #c7ece4;
-
-    border-left: 8px solid #10988e;
-
-    border-radius: 25px;
-
-    padding: 40px;
-
-    margin-bottom: 40px;
-
-    box-shadow:
-        0 10px 25px rgba(0,0,0,0.08);
+    background: #bfe7df;
+    border-left: 6px solid #10988e;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 .quote-mark {
-    font-size: 60px;
+    font-size: 40px;
     color: #10988e;
 }
 
 .quote-text {
-
-    font-size: 2rem;
-
-    line-height: 1.8;
-
+    font-size: 1.4rem;
     color: #173b3a;
-
-    margin-top: 10px;
+    line-height: 1.6;
+    margin-top: 5px;
 }
 
 .author {
-
     text-align: right;
-
-    margin-top: 20px;
-
-    font-size: 1.5rem;
-
+    margin-top: 15px;
     color: #0d6b64;
-
+    font-size: 1.1rem;
     font-style: italic;
 }
 
 /* History */
 
-.history-section {
-    margin-top: 20px;
-}
-
 .history-heading {
     color: #134e4a;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .history-list {
@@ -169,58 +141,29 @@ body {
 }
 
 .history-list li {
-
-    background: #e8faf6;
-
-    border-left: 5px solid #10988e;
-
-    padding: 20px;
-
-    margin-bottom: 15px;
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 4px 10px rgba(0,0,0,0.05);
-
-    transition: 0.3s;
-}
-
-.history-list li:hover {
-    transform: translateX(5px);
+    background: #eefaf7;
+    border-left: 4px solid #10988e;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .history-quote {
-
     color: #173b3a;
-
-    font-size: 16px;
-
-    line-height: 1.6;
-
-    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 .history-author {
-
     color: #0d6b64;
-
     font-style: italic;
-
-    font-weight: 600;
+    margin-top: 5px;
 }
 
 .timestamp {
-
     color: #64748b;
-
-    font-size: 12px;
-
-    margin-top: 8px;
-}
-
-p {
-    color: #0c5c57;
+    font-size: 11px;
+    margin-top: 5px;
 }
 
 /* Mobile */
@@ -228,19 +171,20 @@ p {
 @media (max-width: 768px) {
 
     .container {
-        padding: 25px;
+        padding: 20px;
     }
 
     .header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .quote-text {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
-    .generate-btn {
+    .generate-btn,
+    .clear-btn {
         width: 100%;
-        font-size: 18px;
     }
 }
+

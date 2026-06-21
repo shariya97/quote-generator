@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Quote Generator</title>
+    <title>Quote Generator Hub</title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
@@ -19,14 +19,30 @@
             <div class="divider"></div>
         </div>
 
+        <!-- Statistics Card -->
+        <div class="stats-card">
+            📊 Total Quotes Generated:
+            <strong>{{ total_quotes }}</strong>
+        </div>
+
+        <!-- Buttons -->
         <div class="button-container">
+
             <a href="/generate">
                 <button class="generate-btn">
                     ✒️ Generate New Quote
                 </button>
             </a>
+
+            <a href="/clear">
+                <button class="clear-btn">
+                    🗑 Clear History
+                </button>
+            </a>
+
         </div>
 
+        <!-- Quote Display -->
         {% if quote %}
         <div class="quote-box">
 
@@ -45,6 +61,7 @@
         </div>
         {% endif %}
 
+        <!-- Quote History -->
         <div class="history-section">
 
             <h2 class="history-heading">
@@ -88,3 +105,4 @@
 </body>
 
 </html>
+
